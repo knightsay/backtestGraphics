@@ -16,3 +16,4 @@ src/*.o
 src/*.dll
 src/symbols.rds
 backtestGraphics.Rcheck
+vignettes/backtestGraphics.brf

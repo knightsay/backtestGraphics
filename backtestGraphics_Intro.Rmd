@@ -1,0 +1,41 @@
+---
+title: "backtestGraphics"
+author: "(Miller) Zijie Zhu, Ziqi Lu, Fan Zhang, David Kane"
+output: html_document
+runtime: shiny
+geometry: margin=0.5in
+---
+
+---------------------------------------------------------------------------------
+
+
+
+**backtestGraphics** package creates an interactive graphical interface to visualize backtest results for different financial instruments, including but not limited to equities, futures, and credit default swaps. The package does not run backtests, but instead displays the backtest results graphically. Available summary statistics include average gross market value, cumulative profit and loss, sharpe ratio, top three drawdowns, etc. Available plots include cumulative and point-in-time profit and loss, and gross and net market values, etc. **backtestGraphics** also support backtest results with different strategies, substrategies, and overlapping portfolios, if the necessary columns are provided. Below we will use data sets in the package to demonstrate the functionality of the package. The source code is on [Github](https://github.com/knightsay/backtestGraphics).
+
+To use **backtestGraphics**, the user is required to pass in a data frame with information on date, ID/name, NMV and P&L. Optional information can also be passed into **backtestGraphics**, such as both instrument name and ID, sector, GMV, number of contracts, strategy, substrategy and portfolio number. Try clicking on the "Visualize!" button below.
+
+```{r}
+library(backtestGraphics)
+data(commodity)            ## load the commodity data in the package
+backtestGraphics(x = commodity)
+```
+
+The interface has three dropdown menus for strategies, portfolios and instruments. The user can look at backtest results for a combination of strategy, portfolio, and instrument. If the data frame does not have the strategy column or the portfolio column, the two dropdown menus will be fixed to "Strategy Summary" or "Portfolio Summary". If the user selects a combination that is not available in the data frame, the interface will
+give an error message and ask the user to select a new combination. 
+
+The interface has two tabs on the left: "Summary" tab and "Detail" tab. "Summary" tab shows summary statistics of the user-specified data, while "Detail" tab gives comparison across different instruments and different time periods. This information is calculated from the input data frame every time the user changes her combination of strategy, portfolio and instrument. Note that if the user is looking at data for individual instruments or instrument summary, the best/worst three performers are always selected from the entire portfolio and should remain the same.
+
+The interface displays interactive plots for cumulative and point-in-time P&L, NMV, GMV and number of contracts. Radio buttons at the bottom allow the user to quickly switch between graphs. The cumulative P&L plot is a filled line chart, and all others are bar
+charts. Compared to summary statistics, interactive plots are more intuitive because the user can directly visualize the performance of different instruments across adjustable time period. By decomposing the data frame into different sectors and instruments, the user can closely look at profitability of different strategies as well as that of
+different sectors at different time periods. 
+
+For more information on **backtestGraphics**, please see the source code on [Github](https://github.com/knightsay/backtestGraphics) or read the package [vignette](https://cran.r-project.org/web/packages/backtestGraphics/vignettes/backtestGraphics.pdf) on [CRAN](https://cran.r-project.org/web/packages/backtestGraphics/index.html). You can easily install **backtestGraphics** by typing:
+
+```{r, eval = FALSE}
+install.packages("backtestGraphics")
+```
+or
+```{r, eval = FALSE}
+library(devtools)
+install_github("knightsay/backtestGraphics")
+```

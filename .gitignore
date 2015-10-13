@@ -17,3 +17,4 @@ src/*.dll
 src/symbols.rds
 backtestGraphics.Rcheck
 vignettes/backtestGraphics.brf
+rsconnect/shinyapps.io/backtestgraphics/backtestGraphics.dcf

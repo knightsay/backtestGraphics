@@ -33,7 +33,7 @@
 The \pkg{backtestGraphics} package provides an interactive graphical interface to visualize backtests results for a variety of financial instruments (equities, futures, credit default swaps, et cetera). It provides handy facilities for visualizing backtest data, including:
 
 \begin{itemize}
-  \item A panel to display summary performance statistics, like number of instruments, cumulative and annualized profit and loss, sharpe ratio and the best and worst performing months. 
+  \item A panel to display summary performance statistics, like number of instruments, cumulative and annualized profit and loss, Sharpe ratio and the best and worst performing months. 
   \item A panel to display detailed performance statistics, like top three drawdowns, and the three best and worst performers in the backtest. 
   \item Interactive plots of profit and loss (P\&L), net market value (NMV) and gross market value (GMV). 
     \item Seamless subsetting of backtest data to accommodate for visualization of multiple strategies, sub-strategies, and overlapping portfolios that may be present in a single backtest result. 
@@ -45,19 +45,19 @@ Backtesting is the process of testing trading strategies on prior time horizons 
 
 
 \noindent
-\pkg{backtestGraphics} is not designed to run backtests, but instead, to enable users to employ their human perception to process lots of backtest data quickly and approximately [\cite{bostock}]. We provide fast and flexible tools that help in detecting trends and anomalies in the data. Our package returns a \pkg{Shiny} interface that allows the user to visually explore her backtest results [\cite{shiny}].  The interface contains a sidebar panel which includes "Summary" and  "Detail" tabs. The former provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P\&L), sharpe ratio and best and worst performing months. The "Detail" tab provides the user with information about the top three drawdowns and the three best and worst performers in the backtest. The main panel of the interface houses \pkg{dygraph} plots of cumulative P\&L, daily P\&L, NMV and GMV [\cite{dygraphs}]. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
+Data visualization is not a substitute to analysis; instead, it is a tool to enable users to employ their human perception to process lots of data quickly and approximately [\cite{bostock}]. Accordingly, \pkg{backtestGraphics} is not designed to run backtests, but to visualize backtest data efficiently. We provide fast and flexible tools that help in detecting trends and anomalies in the data. Our package returns a \pkg{Shiny} interface that allows the user to visually explore her backtest results [\cite{shiny}].  The interface contains a sidebar panel which includes ``Summary" and ``Detail" tabs. The ``Summary Tab" provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P\&L), Sharpe ratio and best and worst performing months. The ``Detail" tab provides the user with information about the top three drawdowns and the three best and worst performers in the backtest. The main panel of the interface houses \pkg{dygraph} plots of cumulative P\&L, daily P\&L, NMV and GMV [\cite{dygraphs}]. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
 
 
 
 \noindent
-Backtests vary in complexity. A simple backtest employs a single strategy in a single portfolio, while a more complex backtest might use multiple strategies and sub-strategies. In order to accommodate for this, our package provides two dropdown menus that allows the user to subset her backtest results in accordance to such overlapping portfolios for different (sub)strategies at different time periods.
+Backtests vary in complexity. A simple backtest employs a single strategy in a single portfolio, while a more complex backtest might use multiple strategies and sub-strategies. In order to accommodate for this, our package provides three dropdown menus that allow the user to subset her backtest results in accordance to such overlapping portfolios for different (sub)strategies at different time periods.
 
 
 \section{Data}
 
-The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and CDS, respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. 
+The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and Credit Default Swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. \emph{(Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).}
 
-Let us begin with some details about \code{equity}: 
+Let us begin with some details of \code{equity}: 
 
 <<echo = FALSE>>=
 library(backtestGraphics)
@@ -135,7 +135,7 @@ In this section, we discuss the functionality of various components of the \pkg{
 
 
 \noindent
-As an example, let us look at the interface for the \code{commodity} data frame. Type the following command, and click the "Visualize" button on the Shiny interface returned by the function call. 
+As an example, let us look at the interface for the \code{commodity} data frame. Type the following command, and click the ``Visualize" button on the Shiny interface returned by the function call. 
 
 
 \begin{example}
@@ -146,7 +146,7 @@ backtestGraphics(x = commodity)
 \begin{figure}[H]
 \centering
 \includegraphics[width = \textwidth, height = 2.5in]{img/overallscreen.png}
-\caption{The \code{backtestGraphics} interface for the \code{commodity} data frame. The interface houses three dropdown menus on the top-left to toggle between Strategies, Portfolios, and Instruments. The user may click on the "Vizualize" button to look at the summary statistics and the interactive plots. Finally, the user can also switch between graphs with the radio buttons at the bottom of the plots. 
+\caption{The \code{backtestGraphics} interface for the \code{commodity} data frame. The interface houses three dropdown menus on the top-left to toggle between Strategies, Portfolios, and Instruments. The user may click on the ``Vizualize" button to look at the summary statistics and the interactive plots. Finally, the user can also switch between graphs with the radio buttons at the bottom of the plots. 
 }
 \end{figure}
 Now, let us individually examine the various components of the Shiny interface: 
@@ -157,7 +157,7 @@ The interface contains three dropdown menus on the top-left to toggle between di
 
 
 \noindent
-If the given data frame does not have a \code{strategy} column, or a \code{portfolio} column, the respective dropdown menus will be fixed to "Strategy Summary" and "Portfolio Summary". If the user selects a combination that is incompatible with the given data frame, the interface will generate an error message and prompt the user to select a different combination. 
+If the given data frame does not have a \code{strategy} column, or a \code{portfolio} column, the respective dropdown menus will be fixed to ``Strategy Summary" and ``Portfolio Summary". If the user selects a combination that is incompatible with the given data frame, the interface will generate an error message and prompt the user to select a different combination. 
 
 \noindent
 Figure 2 provides a screenshot of the interface's dropdown menus. 
@@ -170,13 +170,13 @@ Figure 2 provides a screenshot of the interface's dropdown menus.
 
 \subsection{The ``Summary" Tab}
 
-The "Summary" tab is present in the left-panel of the \code{Shiny} interface. It provides summary statistics for the backtest result. Below is a screenshot of the "Summary" tab for our commodity data frame, along with corresponding documentation.  
+The ``Summary" tab is present in the left-panel of the \code{Shiny} interface. It provides summary statistics for the backtest result. Below is a screenshot of the ``Summary" tab for our commodity data frame, along with corresponding documentation.  
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width = 3in, height = 4in]{img/summary.png}
-\caption{The "Summary" tab for the \code{commodity} data frame. On clicking the "Visualize" button, the function slices the data frame according to inputs in the drop down menus to calculate summary statistics for the specified data subset. 
+\caption{The ``Summary" tab for the \code{commodity} data frame. On clicking the ``Visualize" button, the function slices the data frame according to inputs in the drop down menus to calculate summary statistics for the specified data subset. 
 }
 \end{figure}
 
@@ -202,13 +202,13 @@ the month with the lowest P\&L}
 \end{itemize}
 
 \subsubsection{The ``Detail" Tab}
-The "Detail" tab is also present in the left-panel of the \code{Shiny} interface. It provides information about the best and worst performers, as well as the biggest drawdowns. Below is a screenshot of the "Detail" tab for our \code{commodity} data frame, along with corresponding documentation.  
+The ``Detail" tab is also present in the left-panel of the \code{Shiny} interface. It provides information about the best and worst performers, as well as the biggest drawdowns. Below is a screenshot of the ``Detail" tab for our \code{commodity} data frame, along with corresponding documentation.  
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width = 2.5in, height = 3.5in]{img/detail.png}
-\caption{"Detail" tab with the \code{commodity} data frame. 
+\caption{``Detail" tab with the \code{commodity} data frame. 
 }
 \end{figure}
 
@@ -225,7 +225,7 @@ Documentation of detailed statistics:
 
 \subsection{Plots}
 
-The right-panel of our \code{Shiny} interface provides interactive plots for cumulative and point-in-time P&L, NMV, GMV and number of contracts. 
+The right-panel of our \code{Shiny} interface provides interactive plots for cumulative and point-in-time P\&L, NMV, GMV and number of contracts. 
 
 \noindent
 Figure 5 provides a screenshot of the plots.
@@ -255,16 +255,22 @@ Our interface provides the user with summary, as well as detailed statistics abo
 \noindent
 These are powerful tools to uncover trends and anomalies in the data. By decomposing the data frame into different sectors and instruments, the user can gain important insights into his trading strategies over different sectors and time periods. The interactive plots provide additional flexibility to dive into the nitty-gritty details of the backtest.
 
+\noindent
+Going forward, the \pkg{backtestGraphics} package can easily be customized to suit the needs of a specific user. Such customization may include, among others, adding new response variables to plots, redesigning plots, or introducing additional summary statistics. We invite users to take advantage of this, and redesign the \pkg{backtestGraphics} interface according to their preferences. 
+
 \pagebreak
 
 
 \section{Authors}
 
 \address{David Kane\\
-Managing Director \\
-Hutchin Hill Capital\\
-101 Federal Street, Boston, USA\\}
+Haravard University \\
+IQSS\\
+1737 Cambridge Street\\
+CGIS Knafel Building, Room 350\\
+Cambridge, MA, USA\\}
 \email{dave.kane@gmail.com}
+
 
 \address{Ziqi Lu\\
 Economics and Mathematics\\

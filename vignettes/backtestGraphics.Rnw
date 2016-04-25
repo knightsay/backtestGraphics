@@ -98,7 +98,7 @@ Now, let us look at \code{commodity}:
        arrange(id, name))[c(1,6,15,16,17),]
 @
 
-The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} have the same meaning as the ones in equity. The remaining columns are listed below: \emph{(Note: these columns are optional)}. 
+The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} have the same meaning as the ones in \code{equity}. The remaining columns are listed below: \emph{(Note: these columns are optional)}. 
 
 \begin{itemize}
 \item{\code{[ , 2] ID} column contains ID information for different commodities. }
@@ -124,13 +124,13 @@ credit %>% filter(name %in% unique(credit$name)[1:3],
 @
 
 \noindent
-Most of the columns here are the same as those in e\code{equity} and \code{commodity}. Notice that the strategy column here is used to denote backtest results for different trading frequencies. Towards this, the user must provide all backtest observations for each instrument, even when the position on the instrument is held and unchanged. This is because \pkg{backtestGraphics} uses the time gaps between each observation to determine the trading frequencies, and to calculate the annualized statistics. 
+Most of the columns here are the same as those in e\code{equity} and \code{commodity}. Notice that the \code{strategy} column here is used to denote backtest results for different trading frequencies. Towards this, the user must provide all backtest observations for each instrument, even when the position on the instrument is held and unchanged. This is because \pkg{backtestGraphics} uses the time gaps between each observation to determine the trading frequencies, and to calculate the annualized statistics. 
 
 
 
 \section{Using the \code{backtestGraphics} Interface}
 
-In this section, we discuss the functionality of various components of the \pkg{Shiny} interface returned by the \pkg{backtestGraphics} function. To use backtestGraphics, the user is required to pass in a data frame with date, ID/name, NMV and P\&L columns to the \pkg{backtestGraphics} function. Additionally, the user can also pass in optional columns, such as sector, GMV, number of contracts, strategy, sub-strategy, and portfolio number. 
+In this section, we discuss the functionality of various components of the \pkg{Shiny} interface returned by the \pkg{backtestGraphics} function. To use backtestGraphics, the user is required to pass in a data frame with \code{date}, \code{ID/name}, \code{NMV} and \code{P\&L} columns to the \pkg{backtestGraphics} function. Additionally, the user can also pass in optional columns, such as \code{sector}, \code{GMV}, \code{contracts}, \code{strategy}, \code{substrategy}, and \code{portfolio}. 
 
 
 
@@ -157,7 +157,7 @@ The interface contains three dropdown menus on the top-left to toggle between di
 
 
 \noindent
-If the given data frame does not have a strategy column, or a portfolio column, the respective dropdown menus will be fixed to "Strategy Summary" and "Portfolio Summary". If the user selects a combination that is incompatible with the given data frame, the interface will generate an error message and prompt the user to select a different combination. 
+If the given data frame does not have a \code{strategy} column, or a \code{portfolio} column, the respective dropdown menus will be fixed to "Strategy Summary" and "Portfolio Summary". If the user selects a combination that is incompatible with the given data frame, the interface will generate an error message and prompt the user to select a different combination. 
 
 \noindent
 Figure 2 provides a screenshot of the interface's dropdown menus. 

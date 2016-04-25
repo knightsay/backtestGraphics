@@ -55,7 +55,7 @@ Backtests vary in complexity. A simple backtest employs a single strategy in a s
 
 \section{Data}
 
-The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and Credit Default Swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. \emph{(Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).}
+The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and credit default swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. \emph{(Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).}
 
 Let us begin with some details of \code{equity}: 
 
@@ -146,7 +146,7 @@ backtestGraphics(x = commodity)
 \begin{figure}[H]
 \centering
 \includegraphics[width = \textwidth, height = 2.5in]{img/overallscreen.png}
-\caption{The \code{backtestGraphics} interface for the \code{commodity} data frame. The interface houses three dropdown menus on the top-left to toggle between Strategies, Portfolios, and Instruments. The user may click on the ``Vizualize" button to look at the summary statistics and the interactive plots. Finally, the user can also switch between graphs with the radio buttons at the bottom of the plots. 
+\caption{The \code{backtestGraphics} interface for the \code{commodity} data frame. The interface houses three dropdown menus on the top-left to toggle between Strategies, Portfolios, and Instruments. The user may click on the ``Vizualize" button to look at the summary statistics and the interactive plots. Finally, the user can also switch between plots with the radio buttons at the bottom of the plots. 
 }
 \end{figure}
 Now, let us individually examine the various components of the Shiny interface: 
@@ -233,7 +233,7 @@ Figure 5 provides a screenshot of the plots.
 \begin{figure}[H]
 \centering
 \includegraphics[width = 4in, height = 3in]{img/plots.png}
-\caption{A screenshot of the plots with the \code{commodity} data frame. The P\&L plots is displayed on the top, while the market value plots are on the bottom. Radio buttons at the bottom of the plots allow the user to seamlessly switch between graphs.
+\caption{A screenshot of the plots with the \code{commodity} data frame. The P\&L plots is displayed on the top, while the market value plots are on the bottom. Radio buttons at the bottom of the plots allow the user to seamlessly switch between plots.
 }
 \end{figure}
 

@@ -1,0 +1,46 @@
+{
+  "@context": "https://raw.githubusercontent.com/mbjones/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@type": "Person",
+      "email": "david.kane@gmail.com",
+      "name": "David Kane",
+      "affiliation": "Harvard University"
+    },
+    {
+      "@type": "Person",
+      "email": "ziqi.lu@williams.edu",
+      "name": "Ziqi Lu",
+      "affiliation": "Williams College"
+    },
+    {
+      "@type": "Person",
+      "email": "karan.tibrewal@williams.edu",
+      "name": "Karan Tibrewal",
+      "affiliation": "Williams College"
+
+    },
+    {
+      "@type": "Person",
+      "email": "fan.zhang@williams.edu",
+      "name": "Fan Zhang",
+      "affiliation": "Williams College"
+    }, 
+    {
+      "@type": "Person",
+      "email": "zijie.miller.zhu@gmail.com",
+      "name": "Miller Zijie Zhu",
+      "affiliation": "Williams College"
+    }
+  ],
+  "codeRepository": "https://github.com/knightsay/backtestGraphics",
+  "datePublished": "2016-06-20",
+  "dateModified": "2016-06-20",
+  "dateCreated": "2016-06-20",
+  "description": "A tool to visualize backtest results",
+  "keywords": "software, archiving, credit for code",
+  "license": "Apache",
+  "title": "Backtest Graphics",
+  "version": "v1.0.0"
+}

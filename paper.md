@@ -1,10 +1,7 @@
 
 ---
 title: 'Backtest Graphics'
-authors:
-   - name: Arfon M Smith
-     orcid: 0000-0002-3957-2474
-     affiliation: GitHub Inc.
+author: 'David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang, Miller Zijie Zhu' 
 date: 30th May 2016
 bibliography: paper.bib
 ---

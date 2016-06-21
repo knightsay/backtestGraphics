@@ -30,34 +30,35 @@
 \maketitle
 
 \abstract{
-The \pkg{backtestGraphics} package provides an interactive graphical interface to visualize backtests results for a variety of financial instruments (equities, futures, credit default swaps, et cetera). It provides handy facilities for visualizing backtest data, including:
-
-\begin{itemize}
-  \item A panel to display summary performance statistics, like number of instruments, cumulative and annualized profit and loss, Sharpe ratio and the best and worst performing months. 
-  \item A panel to display detailed performance statistics, like top three drawdowns, and the three best and worst performers in the backtest. 
-  \item Interactive plots of profit and loss (P\&L), net market value (NMV) and gross market value (GMV). 
-    \item Seamless subsetting of backtest data to accommodate for visualization of multiple strategies, sub-strategies, and overlapping portfolios that may be present in a single backtest result. 
-\end{itemize}
-
+The \pkg{backtestGraphics} package provides an interactive graphical interface to visualize backtests results for a variety of financial instruments (equities, futures, credit default swaps, et cetera).The \pkg{Shiny} interface, returned by the package, contains a sidebar panel with summary and detailed performance statistics, such as number of instruments, cumulative and annualized profit and loss, Sharpe ratio, top three drawdowns, and the three best and worst performers in the backtest. The main panel of interface houses interactive plots of profit and loss (P\&L), net market value (NMV) and gross market value (GMV). Lastly, the package also supports vizualization of multiple strategies, sub-strategies, and overlapping portfolios that may be present in a single backtest result. 
 }
+
 \section{Introduction}
-Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of the given strategy. It helps investors understand and optimize their trading strategies [\cite{backtest}]. For more on backtesting, \emph{Quantitative Value} [\cite{quantitative}] is a good introductory book. 
+
+Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of the given strategy. It helps investors understand and optimize their trading strategies [\cite{backtest}]. The \pkg{backtestGraphics} package provides an interactive \pkg{Shiny} interface to visualize backtest results for a variety of financial instruments (equities, futures , and credit defualt swaps, among others) [\cite{shiny}]. These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately [\cite{bostock}].
+
+\noindent
+It is important to note here that \pkg{backtestGraphics} doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like \emph{Quantopia}, or even  R packages like \pkg{backtest} [\cite{backtest}].The output from such backtesting is generally in the form of large data frames which are difficult to interpret. As of such, the user may feed these data frames, i.e. the holding data, to \pkg{backtestGraphics}. The package then constructs interactive \pkg{dygraph} plots, and calculates essential summary statistics which are easy to interpret and explore [\cite{dygraphs}].
+
+\noindent
+The \pkg{Shiny} interface returned by the package consists of a sidebar panel that includes a "Summary" and a "Detail" tab. The former provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P&L), Sharpe ratio and best and worst performing months. The "Detail" tab provides information about the best and worst performers, as well as the biggest drawdowns. 
+
+\noindent
+The main panel of the \pkg{Shiny} interface houses interactive plots for cumulative and point-in-time P&L, NMV, GMV and number of contracts. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
+
 
 
 \noindent
-Data visualization is not a substitute to analysis; instead, it is a tool to enable users to employ their human perception to process lots of data quickly and approximately [\cite{bostock}]. Accordingly, \pkg{backtestGraphics} is not designed to run backtests, but to visualize backtest data efficiently. We provide fast and flexible tools that help in detecting trends and anomalies in the data. Our package returns a \pkg{Shiny} interface that allows the user to visually explore her backtest results [\cite{shiny}].  The interface contains a sidebar panel which includes ``Summary" and ``Detail" tabs. The ``Summary Tab" provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P\&L), Sharpe ratio and best and worst performing months. The ``Detail" tab provides the user with information about the top three drawdowns and the three best and worst performers in the backtest. The main panel of the interface houses \pkg{dygraph} plots of cumulative P\&L, daily P\&L, NMV and GMV [\cite{dygraphs}]. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
-
-
-
-\noindent
-Backtests vary in complexity. A simple backtest employs a single strategy in a single portfolio, while a more complex backtest might use multiple strategies and sub-strategies. In order to accommodate for this, our package provides three dropdown menus that allow the user to subset her backtest results in accordance to such overlapping portfolios for different (sub)strategies at different time periods.
+Additionally, to accomodate for more complex backtests, \pkg{backtestgraphics} allows the user to subset seamlessly between overlapping portfolios, and multiple strategies and sub-strategies. For example, suppose the user splits his portfolio into two halves: the first half trades using the aforementioned trading strategy on a weekly basis, while the second uses the same strategy on a bi-weekly basis. Although these strategies overlap every other week, the user may want to explore how a particular strategy does in isolation. In order to do so, the user simply has to select the appropriate options from the dropdown menus provided in the side bar panel.  
 
 
 \section{Data}
 
-The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and credit default swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. \emph{(Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).}
+The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and credit default swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. (Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).
 
-Let us begin with some details of \code{equity}: 
+\subsection{Equity}
+
+Let us begin with some details of \code{equity}. Equities are financial instruments that represent an ownership claim entitling the holder to dividends and ownership rights of the company for which the equities are issued [\cite{equities}].The \code{equity} data frame contains holding data for a trading strategy dealing with equities. 
 
 <<echo = FALSE>>=
 library(backtestGraphics)
@@ -66,61 +67,69 @@ library(dplyr)
 ## use the following dplyr code to show a more interesting section of
 ## the data frame
 
-equity %>% filter(name %in% unique(equity$name)[1:3],
+df <- equity %>% filter(name %in% unique(equity$name)[1:3],
                   date %in% as.Date(c("2005-05-02", "2005-05-03",
                                       "2005-05-04"))) %>%
       arrange(date, name)
+
+print.data.frame(df, row.names = FALSE)
 @
 
 
 \begin{itemize}
-\item{\code{[ , 1] name} column contains the name of each stock.}
-\item{\code{[ , 2] date} column contains the trading date. \emph{(Note: this column must be of  \code{Date} type).  }}
-\item{\code{[ , 3] sector} column contains the sector of each stock.}
-\item{\code{[ , 4] nmv} column contains the NMV at the beginning of the trading day for each stock. \emph{(Note: all values must be converted to the same currency). 
-}}
-\item{\code{[ , 5] pnl} column contains P\&L of each stock. \emph{(Note: all values must be converted to the same currency). 
-}}
+\item{\code{name:} column contains the each stock's symbol.}
+\item{\code{date:} column contains the trading date. (Note: this column must be of  \code{Date} type).
+\item{\code{sector:} column contains the sector of each stock.}
+\item{\code{nmv:} column contains the NMV at the beginning of the trading day for each stock. (Note: all values must be converted to the same currency). 
+}
+\item{\code{pnl:} column contains P\&L of each stock. (Note: all values must be converted to the same currency). 
+}
 \end{itemize}
 
-
+\subsection{Commodity}
 
 \noindent
-Now, let us look at \code{commodity}:
+Now, let us look at \code{commodity}. Simply put, a commodity futures contract is a legally binding agreement that provides for the delivery of the specified value of the said commodity at a specific time period in the future [\cite{futures}]. The \code{commodity} data frame consists of holding data from a trading strategy dealing in such commodity futures. 
 
 <<echo = FALSE>>=
 
 ## use the following dplyr code to show a more interesting section of
 ## the data frame
 
-(commodity %>% filter(id   %in% c("CO", "FC", "W"),
+df <- (commodity %>% filter(id   %in% c("CO", "FC", "W"),
                       date %in% as.Date(c("2003-02-03", "2003-02-07"))) %>%
        arrange(id, name))[c(1,6,15,16,17),]
+print.data.frame(df, row.names = FALSE)
+
 @
 
-The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} have the same meaning as the ones in \code{equity}. The remaining columns are listed below: \emph{(Note: these columns are optional)}. 
+The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} have the same meaning as the ones in \code{equity}. The remaining columns are listed below: (Note: these columns are optional). 
 
 \begin{itemize}
-\item{\code{[ , 2] ID} column contains ID information for different commodities. }
-\item{\code{[ , 6] strategy} column contains the strategy number.
+\item{\code{ID:} column contains ID information for different commodities. }
+\item{\code{strategy:} column contains the strategy number.
 }
-\item{\code{[ , 7] substrategy} column contains the sub-strategy number.
+\item{\code{substrategy:} column contains the sub-strategy number.
 }
-\item{\code{[ , 8] gmv} column contains the GMV of a given commodity at the start of each trading day  \emph{(Note: all values must be converted to the same currency). 
-}}
+\item{\code{gmv:} column contains the GMV of a given commodity at the start of each trading day  (Note: all values must be converted to the same currency). 
+}
 
-\item{\code{[ , 11] contract} column contains the number of contracts of a given commodity at the start of each trading day.  
+\item{\code{contract:} column contains the number of contracts of a given commodity at the start of each trading day.  
 }
 \end{itemize}
 
 
-\noindent
-Finally, we look at \code{credit}:
+\subsection{Credit}
+
+Finally, we look at \code{credit}. Credit Default Swaps (CDS) are a type of credit derivative that transfers the credit risk from one group of investors to another, in exchange for payment [\cite{CDS}]. The \code{credit} data frame contains holding data from a trading strategy dealing in such CDS. 
 
 <<echo = FALSE>>=
-credit %>% filter(name %in% unique(credit$name)[1:3],
+df <- credit %>% filter(name %in% unique(credit$name)[1:3],
                   date %in% unique(credit$date)[1:3]) %>%
       arrange(date, name)
+
+print.data.frame(df, row.names = FALSE)
+
 @
 
 \noindent

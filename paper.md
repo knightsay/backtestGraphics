@@ -1,7 +1,22 @@
 
 ---
 title: 'Backtest Graphics'
-author: 'David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang, Miller Zijie Zhu' 
+authors: 
+  - name: David Kane
+    email: david.kane@gmail.com
+    affiliation: Harvard University
+  - name: Ziqi Lu
+    email: ziqi.lu@williams.edu
+    affiliation: Williams College
+  - name: Karan Tibrewal
+    email: karan.tibrewal@williams.edu
+    affiliation: Williams College
+  - name: Fan Zhang
+    email: fan.zhang@williams.edu
+    affiliation: Williams College
+  - name: Miller Zijie Zhu
+    email: zijie.miller.zhu@gmail.com
+    affiliation: Williams College
 date: 30th May 2016
 bibliography: paper.bib
 ---

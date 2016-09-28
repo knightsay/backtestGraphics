@@ -7,6 +7,8 @@ David Kane, dave.kane at gmail.com
 
 Ziqi Lu, ziqi.lu at williams.edu
 
+Karan Tibrewal, karan.tibrewal at williams.edu
+
 Fan Zhang, fan.zhang at williams.edu
 
 Miller Zijie Zhu, zijie.zhu at williams.edu

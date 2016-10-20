@@ -18,6 +18,8 @@
     email: zijie.miller.zhu@gmail.com
     affiliation: Williams College    
 - date: 30th May 2016
+- bibliography: paper.bib
+- 
 ---
 
 ![](bg1.png)

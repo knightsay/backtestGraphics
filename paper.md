@@ -16,7 +16,7 @@ authors:
     affiliation: Williams College
   - name: Miller Zijie Zhu
     email: zijie.miller.zhu@gmail.com
-    affiliation: Williams College
+    affiliation: Williams College    
 date: 30th May 2016
 bibliography: paper.bib
 ---

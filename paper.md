@@ -1,7 +1,7 @@
 
 ---
-title: 'Backtest Graphics'
-authors: 
+- title: 'Backtest Graphics'   
+- authors: 
   - name: David Kane
     email: david.kane@gmail.com
     affiliation: Harvard University
@@ -17,8 +17,8 @@ authors:
   - name: Miller Zijie Zhu
     email: zijie.miller.zhu@gmail.com
     affiliation: Williams College    
-date: 30th May 2016
-bibliography: paper.bib
+- date: 30th May 2016
+- bibliography: paper.bib
 ---
 
 ![](bg1.png)

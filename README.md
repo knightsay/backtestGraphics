@@ -20,12 +20,8 @@ About
 for different financial instruments, including but not limited to equities, futures, and credit default swaps. The package does
 not run backtests, but instead displays the backtest results graphically. Available summary statistics include average gross market value, cumulative profit and loss, sharpe ratio, top three drawdowns, etc. Available plots include cumulative and point-in -time profit and loss, and gross and net market value, etc. `backtestGraphics` also support backtest results with different strategies, substrategies, and overlapping portfolios, if the necessary columns are provided. 
 
-Maintainer
+Installation
 ----------------------------------------------------------------------------------------------------
-Miller Zijie Zhu, zijie.zhu at williams.edu
-
-###Installation
-
 You can easily install backtestGraphics by typing:
 
     install.packages("backtestGraphics")
@@ -33,3 +29,9 @@ or
 
     library(devtools)
     install_github("knightsay/backtestGraphics")
+
+
+Maintainer
+----------------------------------------------------------------------------------------------------
+Miller Zijie Zhu, zijie.zhu at williams.edu
+

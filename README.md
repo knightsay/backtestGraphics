@@ -30,6 +30,16 @@ or
     library(devtools)
     install_github("knightsay/backtestGraphics")
 
+Usage
+----------------------------------------------------------------------------------------------------
+The package comes with three sample data frames: `commodity`, `equity`, and `credit`. These are backtest results for commodity futures, equities, and credit default swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the `backtestGraphics` package. (Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).
+
+As an example, let us look at `backtestGraphics` at work for the `commodity` data frame. Type the following command, and click the "Visualize" button on the Shiny interface returned by the function call. 
+
+
+    library(backtestGraphics)
+    backtestGraphics(x = commodity)
+
 
 Maintainer
 ----------------------------------------------------------------------------------------------------

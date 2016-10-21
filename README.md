@@ -23,3 +23,13 @@ not run backtests, but instead displays the backtest results graphically. Availa
 Maintainer
 ----------------------------------------------------------------------------------------------------
 Miller Zijie Zhu, zijie.zhu at williams.edu
+
+###Installation
+
+You can easily install backtestGraphics by typing:
+
+    install.packages("backtestGraphics")
+or
+
+    library(devtools)
+    install_github("knightsay/backtestGraphics")

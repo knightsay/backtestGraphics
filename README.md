@@ -22,7 +22,7 @@ not run backtests, but instead displays the backtest results graphically. Availa
 
 Installation
 ----------------------------------------------------------------------------------------------------
-You can easily install backtestGraphics by typing:
+You can easily install `backtestGraphics` by typing:
 
     install.packages("backtestGraphics")
 or

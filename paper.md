@@ -42,13 +42,5 @@ Additionally, to accomodate for more complex backtests, **Backtest Graphics** al
 
 In order to see **Backtest Graphics** in action, please visit [here](https://backtestgraphics.shinyapps.io/backtestGraphics)!
 
-###Installation
 
-You can easily install backtestGraphics by typing:
-
-    install.packages("backtestGraphics")
-or
-
-    library(devtools)
-    install_github("knightsay/backtestGraphics")
 

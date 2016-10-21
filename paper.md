@@ -26,9 +26,9 @@
 
 ###Summary
 
-Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of a given strategy. It helps investors understand and optimize their trading strategies. The **Backtest Graphics** package provides an interactive **Shiny** interface to visualize backtest results for a variety of financial instruments (equities, futures , and credit defualt swaps, among others). These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately. 
+Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of a given strategy. It helps investors understand and optimize their trading strategies. The **Backtest Graphics** package provides an interactive **Shiny** interface to visualize backtest results for a variety of financial instruments (equities, futures , and credit defualt swaps, among others)  (Chang et al. 2015). These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately (Bostock 2012). 
 
-It is important to note here that **Backtest Graphics** doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like **Quantopia**, or even  R packages like **backtest**.The output from such backtesting is generally in the form of large dataframes which are difficult to interpret. As of such, the user may feed these dataframes, i.e. the holding data, to **backtestGraphics**. The package then constructs interactive **dygraph** plots, and calculates essential summary statistics which are easy to interpret and explore. 
+It is important to note here that **Backtest Graphics** doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like **Quantopia**, or even  R packages like **backtest** (Campbell et al. 2008).The output from such backtesting is generally in the form of large dataframes which are difficult to interpret. As of such, the user may feed these dataframes, i.e. the holding data, to **backtestGraphics**. The package then constructs interactive **dygraph** plots, and calculates essential summary statistics which are easy to interpret and explore (Vanderkam and Allaire 2015). 
 
 The **Shiny** interface returned by the package consists of a sidebar panel that includes a "Summary" and a "Detail" tab. The former provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P&L), Sharpe ratio and best and worst performing months. The "Detail" tab provides information about the best and worst performers, as well as the biggest drawdowns. 
 
@@ -43,4 +43,11 @@ Additionally, to accomodate for more complex backtests, **Backtest Graphics** al
 In order to see **Backtest Graphics** in action, please visit [here](https://backtestgraphics.shinyapps.io/backtestGraphics)!
 
 
+###References
 
+Bostock, Mike. 2012. Time Series Visualization with Cubism.js. https://bost.ocks.org/mike/cubism/intro/#0.     
+Campbell, Kyle, Jeffrey Enos, Daniel Gerlanc, and David Kane. 2008. “Backtests.” R News 7 (1).    
+Chang, Winston, Joe Cheng, JJ Allaire, Yihui Xie, and Jonathan McPherson. 2015. Shiny: Web Application
+Framework for R. http://CRAN.R-project.org/package=shiny.    
+Vanderkam, Dan, and JJ Allaire. 2015. Dygraphs: Interface to Dygraphs Interactive Time Series Charting
+Library. http://CRAN.R-project.org/package=dygraphs.    

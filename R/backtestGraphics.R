@@ -365,7 +365,7 @@ backtestGraphics <- function(x,
         
         return(tab)
         
-      }, align = "rlr",
+      },
       include.colnames = FALSE,
       include.rownames = FALSE)
       
@@ -394,7 +394,7 @@ backtestGraphics <- function(x,
                        }
                        
                        return(tbl)
-                     }), align = "rrr",
+                     }),
         include.colnames = FALSE,
         include.rownames = FALSE)
       
@@ -419,7 +419,7 @@ backtestGraphics <- function(x,
                        }
                        
                        return(tbl)
-                     }), align = "rrr",
+                     }),
         include.colnames = FALSE,
         include.rownames = FALSE)
       
@@ -441,7 +441,7 @@ backtestGraphics <- function(x,
                        
                        colnames(tbl) <- c("Start Date","End Date", "P&L ($)")
                        return(tbl)
-                     }), align = "rrrr", 
+                     }), 
         include.colnames = FALSE,
         include.rownames = FALSE)
       

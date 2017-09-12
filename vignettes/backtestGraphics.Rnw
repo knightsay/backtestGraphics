@@ -38,13 +38,13 @@ The \pkg{backtestGraphics} package provides an interactive graphical interface t
 Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of the given strategy. It helps investors understand and optimize their trading strategies [\cite{backtest}]. The \pkg{backtestGraphics} package provides an interactive \pkg{Shiny} interface to visualize backtest results for a variety of financial instruments (equities, futures , and credit defualt swaps, among others) [\cite{shiny}]. These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately [\cite{bostock}].
 
 \noindent
-It is important to note here that \pkg{backtestGraphics} doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like \emph{Quantopia}, or even  R packages like \pkg{backtest} [\cite{backtest}].The output from such backtesting is generally in the form of large data frames which are difficult to interpret. As of such, the user may feed these data frames, i.e. the holding data, to \pkg{backtestGraphics}. The package then constructs interactive \pkg{dygraph} plots, and calculates essential summary statistics which are easy to interpret and explore [\cite{dygraphs}].
+It is important to note here that \pkg{backtestGraphics} doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S\&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like \emph{Quantopia}, or even  R packages like \pkg{backtest} [\cite{backtest}].The output from such backtesting is generally in the form of large data frames which are difficult to interpret. As of such, the user may feed these data frames, i.e. the holding data, to \pkg{backtestGraphics}. The package then constructs interactive \pkg{dygraph} plots, and calculates essential summary statistics which are easy to interpret and explore [\cite{dygraphs}].
 
 \noindent
-The \pkg{Shiny} interface returned by the package consists of a sidebar panel that includes a "Summary" and a "Detail" tab. The former provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P&L), Sharpe ratio and best and worst performing months. The "Detail" tab provides information about the best and worst performers, as well as the biggest drawdowns. 
+The \pkg{Shiny} interface returned by the package consists of a sidebar panel that includes a "Summary" and a "Detail" tab. The former provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P\&L), Sharpe ratio and best and worst performing months. The "Detail" tab provides information about the best and worst performers, as well as the biggest drawdowns. 
 
 \noindent
-The main panel of the \pkg{Shiny} interface houses interactive plots for cumulative and point-in-time P&L, NMV, GMV and number of contracts. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
+The main panel of the \pkg{Shiny} interface houses interactive plots for cumulative and point-in-time P\&L, NMV, GMV and number of contracts. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
 
 
 
@@ -56,9 +56,11 @@ Additionally, to accomodate for more complex backtests, \pkg{backtestgraphics} a
 
 The package comes with three sample data frames: \code{commodity}, \code{equity}, and \code{credit}. These are backtest results for commodity futures, equities, and credit default swaps (CDS), respectively. We use these data frames to demonstrate the capabilities of the backtestGraphics package. (Note: The user may also use her own data frame, as long as it adheres to the format specified in the documentation).
 
+
 \subsection{Equity}
 
 Let us begin with some details of \code{equity}. Equities are financial instruments that represent an ownership claim entitling the holder to dividends and ownership rights of the company for which the equities are issued [\cite{equities}].The \code{equity} data frame contains holding data for a trading strategy dealing with equities. 
+
 
 <<echo = FALSE>>=
 library(backtestGraphics)
@@ -75,10 +77,9 @@ df <- equity %>% filter(name %in% unique(equity$name)[1:3],
 print.data.frame(df, row.names = FALSE)
 @
 
-
 \begin{itemize}
 \item{\code{name:} column contains the each stock's symbol.}
-\item{\code{date:} column contains the trading date. (Note: this column must be of  \code{Date} type).
+\item{\code{date:} column contains the trading date. (Note: this column must be of  \code{Date} type)}.
 \item{\code{sector:} column contains the sector of each stock.}
 \item{\code{nmv:} column contains the NMV at the beginning of the trading day for each stock. (Note: all values must be converted to the same currency). 
 }
@@ -118,7 +119,6 @@ The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} 
 }
 \end{itemize}
 
-
 \subsection{Credit}
 
 Finally, we look at \code{credit}. Credit Default Swaps (CDS) are a type of credit derivative that transfers the credit risk from one group of investors to another, in exchange for payment [\cite{CDS}]. The \code{credit} data frame contains holding data from a trading strategy dealing in such CDS. 
@@ -134,8 +134,6 @@ print.data.frame(df, row.names = FALSE)
 
 \noindent
 Most of the columns here are the same as those in e\code{equity} and \code{commodity}. Notice that the \code{strategy} column here is used to denote backtest results for different trading frequencies. Towards this, the user must provide all backtest observations for each instrument, even when the position on the instrument is held and unchanged. This is because \pkg{backtestGraphics} uses the time gaps between each observation to determine the trading frequencies, and to calculate the annualized statistics. 
-
-
 
 \section{Using the \code{backtestGraphics} Interface}
 
@@ -249,9 +247,6 @@ Figure 5 provides a screenshot of the plots.
 \noindent
 We have made the plots interactive using the \pkg{dygraphs} package [\cite{dygraphs}]. The user can zoom in to a specific time periods in a plot by dragging the corresponding region with the mouse, or changing the time slider bar, which is located below the plots. To go back to the original time scale, the user can merely double click on the respective plot. Additionally, by hovering the mouse over the plot, the user can get specific values of the response variable of the plot, on the specific date. The color of the plots is based on the sign of the point-in-time P\&L. Green bars represent profits, while the red bars represent losses. 
 
-
-
-
 \section{Conclusion}
 
 The \pkg{backtestGraphics} package provides a simple \code{Shiny} interface to visualize backtest results. Inside the package, we have provided three sample data frames. The user can use the code provided in this document to test the package with these data frames. 
@@ -305,6 +300,7 @@ Computer Science and Economics \\
 Williams College\\
 Williamstown, MA, USA\\}
 \email{zijie.miller.zhu@gmail.com}
+
 
 
 \bibliography{backtestGraphics}

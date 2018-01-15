@@ -191,7 +191,7 @@ Documentation of summary statistics:
 
 \begin{itemize}
 \item{Start and End date : The backtest period.}
-\item{Allocated Capital : The amount of capital allocated to the portfolio. We use this number to calculate return on allocated capital. If the user does not specify this value, the corresponding entry will be \code{NULL} and our package will use the highest GMV to calculate return on allocated capital. 
+\item{Allocated Capital : The amount of capital allocated to the portfolio. We use this number to calculate return on allocated capital. If the user does not specify this value, the corresponding entry will be \code{NULL} and `backtestGraphics` will use the highest GMV to calculate return on allocated capital. 
 }
 \item{Average GMV : Average GMV of the portfolio over the backtest period. GMV is calculated by taking the absolute value of NMV of each instrument. }
 \item{Number of Instruments : The number of different instruments in the given subset of the data frame.}

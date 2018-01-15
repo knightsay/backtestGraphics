@@ -157,6 +157,10 @@ backtestGraphics <- function(x,
                       substrategy.var = substrategy.var,
                       portfolio.var   = portfolio.var)
   
+  strategy_optGroups <- create_strategy_optGroups(x$strategy, x$substrategy)
+  
+  instrument_optGroups <- create_instrument_optGroups(x$sector, x$id)
+  
   shinyApp(
     
     ######################################################
@@ -185,7 +189,7 @@ backtestGraphics <- function(x,
         
         selectInput("strategy",
                     label    = "Strategies",
-                    choices  = c("Strategy Summary", unique(x$strategy), unique(x$substrategy)),
+                    choices  = c("Strategy Summary", strategy_optGroups),
                     selected = "Strategy Summary"),
         
         selectInput("portfolio",
@@ -198,7 +202,7 @@ backtestGraphics <- function(x,
         
         selectizeInput("instrument", 
                        label   = "Instruments",
-                       choices = c("Instrument Summary", unique(x$sector), unique(x$id)), 
+                       choices = c("Instrument Summary", instrument_optGroups), 
                        options = list(maxOptions = 50)                      
         ),
         

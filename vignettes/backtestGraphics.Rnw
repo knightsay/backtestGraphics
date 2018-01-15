@@ -35,13 +35,13 @@ The \pkg{backtestGraphics} package provides an interactive graphical interface t
 
 \section{Introduction}
 
-Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of the given strategy. It helps investors understand and optimize their trading strategies [\cite{backtest}]. The \pkg{backtestGraphics} package provides an interactive \pkg{Shiny} interface to visualize backtest results for a variety of financial instruments (equities, futures , and credit defualt swaps, among others) [\cite{shiny}]. These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately [\cite{bostock}].
+Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of the given strategy. It helps investors understand and optimize their trading strategies [\cite{backtest}]. The \pkg{backtestGraphics} package provides an interactive \pkg{Shiny} interface to visualize backtest results for a variety of financial instruments (equities, futures, and credit defualt swaps, among others) [\cite{shiny}]. These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately [\cite{bostock}].
 
 \noindent
-It is important to note here that \pkg{backtestGraphics} doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S\&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like \emph{Quantopia}, or even  R packages like \pkg{backtest} [\cite{backtest}].The output from such backtesting is generally in the form of large data frames which are difficult to interpret. As of such, the user may feed these data frames, i.e. the holding data, to \pkg{backtestGraphics}. The package then constructs interactive \pkg{dygraph} plots, and calculates essential summary statistics which are easy to interpret and explore [\cite{dygraphs}].
+It is important to note here that \pkg{backtestGraphics} doesn't run backtests, but instead provides graphical visualization of backtest results. To illustrate this subtle distinction, consider a simple trading strategy that buys the top 10 shares of the S\&P 500, and shorts the bottom 10. Now, to test how the strategy performs historically, the user may use backtesting software like \emph{Quantopian}, or even  R packages like \pkg{backtest} [\cite{backtest}].The output from such backtesting is generally in the form of large data frames which are difficult to interpret. As of such, the user may feed these data frames, i.e. the holding data, to \pkg{backtestGraphics}. The package then constructs interactive \pkg{dygraph} plots, and calculates essential summary statistics which are easy to interpret and explore [\cite{dygraphs}].
 
 \noindent
-The \pkg{Shiny} interface returned by the package consists of a sidebar panel that includes a "Summary" and a "Detail" tab. The former provides the user with summary statistics, such as average gross market value (GMV), number of instruments, cumulative and annualized profit and loss (P\&L), Sharpe ratio and best and worst performing months. The "Detail" tab provides information about the best and worst performers, as well as the biggest drawdowns. 
+The \pkg{Shiny} interface returned by the package consists of a sidebar panel that includes a "Summary" and a "Detail" tab. The former provides the user with summary statistics, such as average gross market value (GMV), net market value (NMV), number of instruments, cumulative and annualized profit and loss (P\&L), Sharpe ratio and best and worst performing months. The "Detail" tab provides information about the best and worst performers, as well as the biggest drawdowns. 
 
 \noindent
 The main panel of the \pkg{Shiny} interface houses interactive plots for cumulative and point-in-time P\&L, NMV, GMV and number of contracts. The interactive nature of these plots provide the user with additional flexibility in exploring her backtest results by enabling her to zoom into specific time periods, or learn the value of a given response variable on a specific date.
@@ -177,7 +177,7 @@ Figure 2 provides a screenshot of the interface's dropdown menus.
 
 \subsection{The ``Summary" Tab}
 
-The ``Summary" tab is present in the left-panel of the \code{Shiny} interface. It provides summary statistics for the backtest result. Below is a screenshot of the ``Summary" tab for our commodity data frame, along with corresponding documentation.  
+The ``Summary" tab is present in the left-panel of the \code{Shiny} interface. It provides summary statistics for the backtest result. Figure 3 contains a screenshot of the ``Summary" tab for our commodity data frame, along with corresponding documentation.  
 
 
 \begin{figure}[H]
@@ -209,7 +209,7 @@ the month with the lowest P\&L}
 \end{itemize}
 
 \subsubsection{The ``Detail" Tab}
-The ``Detail" tab is also present in the left-panel of the \code{Shiny} interface. It provides information about the best and worst performers, as well as the biggest drawdowns. Below is a screenshot of the ``Detail" tab for our \code{commodity} data frame, along with corresponding documentation.  
+The ``Detail" tab is also present in the left-panel of the \code{Shiny} interface. It provides information about the best and worst performers, as well as the biggest drawdowns. Figure 4 displays a screenshot of the ``Detail" tab for our \code{commodity} data frame, along with corresponding documentation.  
 
 
 \begin{figure}[H]

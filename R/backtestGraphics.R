@@ -210,10 +210,13 @@ backtestGraphics <- function(x,
           ## user click this button this way Shiny won't eagerly evaluate when
           ## the user is still typing
           
+          ## Make clear to the user that they must click visualize before 
+          ## they see anything
+          helpText("Click Visualize to view results."),
+          
           column(4,
                  
                  ## Unless submitButton is pressed, shiny won't evaluate inputs
-                 
                  actionButton(inputId = "visualize", label = "Visualize!"),
                  
                  ## print additional blank row to place buttom in better position

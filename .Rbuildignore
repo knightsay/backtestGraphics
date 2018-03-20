@@ -1,2 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^DESCRIPTION$
+^LICENSE$
+^NOTICE$
+^paper\.bib$
+^paper\.json$
+^paper\.md$
+^CONTRIBUTING\.md$
+^README\.md$

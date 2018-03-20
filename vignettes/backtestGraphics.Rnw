@@ -49,7 +49,7 @@ The main panel of the \pkg{Shiny} interface houses interactive plots for cumulat
 
 
 \noindent
-Additionally, to accomodate for more complex backtests, \pkg{backtestgraphics} allows the user to subset seamlessly between overlapping portfolios, and multiple strategies and sub-strategies. For example, suppose the user splits his portfolio into two halves: the first half trades using the aforementioned trading strategy on a weekly basis, while the second uses the same strategy on a bi-weekly basis. Although these strategies overlap every other week, the user may want to explore how a particular strategy does in isolation. In order to do so, the user simply has to select the appropriate options from the dropdown menus provided in the side bar panel.  
+Additionally, to accomodate for more complex backtests, \pkg{backtestGraphics} allows the user to subset seamlessly between overlapping portfolios, and multiple strategies and sub-strategies. For example, suppose the user splits his portfolio into two halves: the first half trades using the aforementioned trading strategy on a weekly basis, while the second uses the same strategy on a bi-weekly basis. Although these strategies overlap every other week, the user may want to explore how a particular strategy does in isolation. In order to do so, the user simply has to select the appropriate options from the dropdown menus provided in the side bar panel.  
 
 
 \section{Data}

@@ -336,7 +336,7 @@ backtestGraphics <- function(x,
         
         items <- c("Start Date", 
                    "End Date",
-                   "Allocated Capital",
+                   "Allocated Capital (AC)",
                    "Average GMV ($)",
                    "Number of Instruments",
                    "Cumulative P&L ($)",

@@ -397,7 +397,7 @@ backtestGraphics <- function(x,
                        
                        tbl$pnl <- as.character(tbl$pnl)
                        for(i in 2:nrow(tbl)){
-                         tbl$pnl[i] <- comma_format(digit = 4)(as.numeric(tbl$pnl[i]))
+                         tbl$pnl[i] <- comma_format(digits = 4)(as.numeric(tbl$pnl[i]))
                        }
                        
                        return(tbl)
@@ -422,7 +422,7 @@ backtestGraphics <- function(x,
                        
                        tbl$pnl <- as.character(tbl$pnl)
                        for(i in 2:nrow(tbl)){
-                         tbl$pnl[i] <- comma_format(digit = 4)(as.numeric(tbl$pnl[i]))
+                         tbl$pnl[i] <- comma_format(digits = 4)(as.numeric(tbl$pnl[i]))
                        }
                        
                        return(tbl)
@@ -443,7 +443,7 @@ backtestGraphics <- function(x,
                        
                        tbl$pnl <- as.character(tbl$pnl)
                        for(i in 2:nrow(tbl)){
-                         tbl$pnl[i] <- comma_format(digit = 4)(as.numeric(tbl$pnl[i]))
+                         tbl$pnl[i] <- comma_format(digits = 4)(as.numeric(tbl$pnl[i]))
                        }
                        
                        colnames(tbl) <- c("Start Date","End Date", "P&L ($)")

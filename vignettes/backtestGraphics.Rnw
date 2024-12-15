@@ -9,7 +9,7 @@
 \usepackage[parfill]{parskip}
 \usepackage[round]{natbib}
 
-%\VignetteEngine{Sweave}
+%\VignetteEngine{utils::Sweave}
 %\VignetteIndexEntry{backtestGraphics}
 
 \begin{document}

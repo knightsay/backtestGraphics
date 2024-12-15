@@ -21,7 +21,7 @@ Author: as.person(c(
                 "Miller Zijie Zhu <zijie.miller.zhu@gmail.com> [aut]"
              ))
 Maintainer: Miller Zijie Zhu <zijie.miller.zhu@gmail.com>
-License: GPL-3
+License: GPL-3 + file LICENSE
 LazyData: true
 Depends: R (>= 2.10)
 Imports: dygraphs, dplyr, scales, xts, shiny

@@ -25,7 +25,7 @@
 
 \title{Backtest Graphics}
 
-\author{by David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang, Miller Zijie Zhu}
+\author{by Yanrong Song, David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang, Zijie Miller Zhu}
 
 \maketitle
 
@@ -267,6 +267,12 @@ Going forward, the \pkg{backtestGraphics} package can easily be customized to su
 
 \section{Authors}
 
+\address{Yanrong Stacy Song\\
+Financial Engineering\\
+Columbia University \\
+New York, NY, USA\\}
+\email{yrsong129@gmail.com}
+
 \address{David Kane\\
 Haravard University \\
 IQSS\\
@@ -295,7 +301,7 @@ Williams College\\
 Williamstown, MA, USA\\}
 \email{fan.zhang@williams.edu}
 
-\address{Miller Zijie Zhu\\
+\address{Zijie Miller Zhu\\
 Computer Science and Economics \\
 Williams College\\
 Williamstown, MA, USA\\}

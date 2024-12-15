@@ -41,6 +41,10 @@ As an example, let us look at `backtestGraphics` at work for the `commodity` dat
 
     library(backtestGraphics)
     backtestGraphics(x = commodity)
+    
+Contributing
+----------------------------------------------------------------------------------------------------
+We welcome contributions! Please see our [Contributing Guidelines](.github/CONTRIBUTING.md) for more details on how to report issues, request features, or submit a pull request.
 
 
 Maintainer

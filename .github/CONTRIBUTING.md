@@ -2,12 +2,12 @@ Thanks for taking the time to contribute! Below our some guidelines that might b
 
 ### Have a question?
 
-A good place to start is going throw the vignette for the [package](https://github.com/knightsay/backtestGraphics/blob/master/vignettes/backtestGraphics.pdf). 
+A good place to start is going throw the vignette for the [package](https://github.com/yanrong-stacy-song/backtestGraphics/blob/master/vignettes/backtestGraphics.pdf). 
 We have taken care to document several use cases for our package in detail. If your question is still not answered, please open an issue or email the maintainer. 
 
 ### Have a bug report or feature request?
 
-1. Search current open GitHub [issues](https://github.com/knightsay/backtestGraphics/issues)
+1. Search current open GitHub [issues](https://github.com/yanrong-stacy-song/backtestGraphics/issues)
    to check if the bug/feature has already been reported/requested.
 2. Additionally, for bug reports, make sure our fork and local copy are up-to-date, and verify the bug still
    exists in the HEAD of the master branch.

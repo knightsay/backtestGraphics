@@ -30,7 +30,7 @@ You can easily install `backtestGraphics` by typing:
 or
 
     library(devtools)
-    install_github("knightsay/backtestGraphics")
+    install_github("yanrong-stacy-song/backtestGraphics")
 
 Usage
 ----------------------------------------------------------------------------------------------------

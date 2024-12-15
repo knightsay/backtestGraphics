@@ -3,6 +3,8 @@
 Authors
 --------------------------------------------------------
 
+Yanrong Song, yrsong129@ at gmail.com
+
 David Kane, dave.kane at gmail.com
 
 Ziqi Lu, ziqi.lu at williams.edu
@@ -11,7 +13,7 @@ Karan Tibrewal, karan.tibrewal at williams.edu
 
 Fan Zhang, fan.zhang at williams.edu
 
-Miller Zijie Zhu, zijie.zhu at williams.edu
+Miller Zijie Zhu, zijie.miller.zhu at gmail.com
 
 About
 -----------------------------------------------------------------------
@@ -43,5 +45,5 @@ As an example, let us look at `backtestGraphics` at work for the `commodity` dat
 
 Maintainer
 ----------------------------------------------------------------------------------------------------
-Miller Zijie Zhu, zijie.zhu at williams.edu
+Yanrong Stacy Song, yrsong129 at gmail.com
 

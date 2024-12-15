@@ -5,6 +5,8 @@ Authors
 
 Yanrong Song, yrsong129 at gmail.com
 
+Miller Zijie Zhu, zijie.miller.zhu at gmail.com
+
 David Kane, dave.kane at gmail.com
 
 Ziqi Lu, ziqi.lu at williams.edu
@@ -12,8 +14,6 @@ Ziqi Lu, ziqi.lu at williams.edu
 Karan Tibrewal, karan.tibrewal at williams.edu
 
 Fan Zhang, fan.zhang at williams.edu
-
-Miller Zijie Zhu, zijie.miller.zhu at gmail.com
 
 About
 -----------------------------------------------------------------------

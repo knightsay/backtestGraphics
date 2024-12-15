@@ -15,11 +15,11 @@ Version: 0.1.7
 Date: 2024-12-14
 Author: as.person(c(
                 "Yanrong Stacy Song <yrsong129@gmail.com> [aut]",
+                "Zijie Miller Zhu <zijie.miller.zhu@gmail.com> [aut]",
                 "David Kane <dave.kane@gmail.com> [aut]",
                 "Ziqi Lu <ziqi.lu@williams.edu> [aut]",
                 "Karan Tibrewal <karan.tibrewal@williams.edu> [aut]",
-                "Fan Zhang <fan.zhang@williams.edu> [aut]",
-                "Zijie Miller Zhu <zijie.miller.zhu@gmail.com> [aut]"
+                "Fan Zhang <fan.zhang@williams.edu> [aut]"
              ))
 Maintainer: Yanrong Stacy Song <yrsong129@gmail.com>
 License: GPL-3 + file LICENSE

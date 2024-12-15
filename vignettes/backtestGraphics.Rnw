@@ -25,7 +25,7 @@
 
 \title{Backtest Graphics}
 
-\author{by Yanrong Song, David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang, Zijie Miller Zhu}
+\author{by Yanrong Song, Zijie Miller Zhu, David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang}
 
 \maketitle
 
@@ -273,6 +273,12 @@ Columbia University \\
 New York, NY, USA\\}
 \email{yrsong129@gmail.com}
 
+\address{Zijie Miller Zhu\\
+Computer Science and Economics \\
+Williams College\\
+Williamstown, MA, USA\\}
+\email{zijie.miller.zhu@gmail.com}
+
 \address{David Kane\\
 Haravard University \\
 IQSS\\
@@ -300,13 +306,6 @@ Economics and Statistics \\
 Williams College\\
 Williamstown, MA, USA\\}
 \email{fan.zhang@williams.edu}
-
-\address{Zijie Miller Zhu\\
-Computer Science and Economics \\
-Williams College\\
-Williamstown, MA, USA\\}
-\email{zijie.miller.zhu@gmail.com}
-
 
 
 \bibliography{backtestGraphics}

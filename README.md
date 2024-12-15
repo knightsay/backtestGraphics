@@ -3,7 +3,7 @@
 Authors
 --------------------------------------------------------
 
-Yanrong Song, yrsong129@ at gmail.com
+Yanrong Song, yrsong129 at gmail.com
 
 David Kane, dave.kane at gmail.com
 

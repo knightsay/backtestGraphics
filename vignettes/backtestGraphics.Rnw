@@ -11,6 +11,7 @@
 
 %\VignetteEngine{utils::Sweave}
 %\VignetteIndexEntry{backtestGraphics}
+%\VignetteEncoding{UTF-8}
 
 \begin{document}
 \SweaveOpts{concordance=FALSE}
@@ -25,7 +26,7 @@
 
 \title{Backtest Graphics}
 
-\author{by Yanrong Song, Zijie Miller Zhu, David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang}
+\author{by Yanrong Song, Zijie Zhu, David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang}
 
 \maketitle
 
@@ -267,13 +268,13 @@ Going forward, the \pkg{backtestGraphics} package can easily be customized to su
 
 \section{Authors}
 
-\address{Yanrong Stacy Song\\
+\address{Yanrong Song\\
 Financial Engineering\\
 Columbia University \\
 New York, NY, USA\\}
 \email{yrsong129@gmail.com}
 
-\address{Zijie Miller Zhu\\
+\address{Zijie Zhu\\
 Computer Science and Economics \\
 Williams College\\
 Williamstown, MA, USA\\}

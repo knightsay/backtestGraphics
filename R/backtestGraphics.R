@@ -104,9 +104,7 @@
 #'   and performances are displayed on the left sidebar as tables.
 #'   
 #' @examples
-#' \dontrun{
-#' backtestGraphics(data = credit.bt)
-#' }
+#' if(interactive()) {backtestGraphics(credit)}
 #' 
 #' @importFrom xts xts
 #' @importFrom scales comma_format

@@ -140,8 +140,6 @@ different pieces to diagnose the data better, or can be calculated from the
 data inside the input data set.
 }
 \examples{
-\dontrun{
-backtestGraphics(data = credit.bt)
-}
+if(interactive()) {backtestGraphics(credit)}
 
 }

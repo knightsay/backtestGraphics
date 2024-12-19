@@ -48,7 +48,7 @@ For more details, please run the following to see the detailed vignette:
     
 Contributing
 ----------------------------------------------------------------------------------------------------
-We welcome contributions! Please see our [Contributing Guidelines](.github/CONTRIBUTING.md) for more details on how to report issues, request features, or submit a pull request.
+We welcome contributions! Please see our contributing guidelines in the [Github Wiki](https://github.com/yanrong-stacy-song/backtestGraphics/wiki/Contributing-Guide) for more details on how to report issues, request features, or submit a pull request.
 
 
 Maintainer

@@ -28,6 +28,14 @@
 
 \author{by Yanrong Song, Zijie Zhu, David Kane, Ziqi Lu, Karan Tibrewal, Fan Zhang}
 
+%% https://www.jstatsoft.org/guides/submission
+
+%% The typical JSS paper will have a section explaining the statistical technique, a section explaining the code, a section with the actual code, and a section with examples. Special emphasis is given to a careful review of existing implementations and a discussion of the advantages and disadvantages of the contribution in comparison to other solutions.
+
+%% Please indicate any platform dependencies with the submission. Make sure to initialize the generator for pseudo random numbers if the results rely on some form of simulation. Typically, reproducibility is demonstrated by a standalone replication script.
+
+%% Revisions, in any state of the review process, must always be submitted together with a point-to-point reply to the points made by reviewers and editors.
+
 \maketitle
 
 \abstract{

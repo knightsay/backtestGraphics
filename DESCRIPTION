@@ -42,7 +42,7 @@ Authors@R: c(
 License: GPL-3
 LazyData: true
 Depends: R (>= 3.5.0)
-Imports: dygraphs, dplyr, scales, xts, shiny
+Imports: dygraphs, dplyr, scales, xts, shiny, tibble
 Suggests: testthat
 NeedsCompilation: no
 Packaged: 2015-08-13 13:01:32 UTC; zzhu

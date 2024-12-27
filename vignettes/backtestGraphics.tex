@@ -5,17 +5,12 @@
 %% recommended packages
 \usepackage{orcidlink,thumbpdf,lmodern,framed,float,amsmath}
 
-%\VignetteEngine{utils::Sweave}
-%\VignetteIndexEntry{backtestGraphics}
-%\VignetteEncoding{UTF-8}
-
 %% new custom commands
 \newcommand{\class}[1]{`\code{#1}'}
 \newcommand{\fct}[1]{\code{#1()}}
 
 %% For Sweave-based articles about R packages:
 %% need no \usepackage{Sweave}
-\SweaveOpts{engine=R, eps=FALSE, keep.source = TRUE}
 
 
 
@@ -123,20 +118,20 @@ The package comes with three sample data frames: \code{commodity}, \code{equity}
 Let us begin with some details of \code{equity}. Equities are financial instruments that represent an ownership claim entitling the holder to dividends and ownership rights of the company for which the equities are issued [\cite{equities}].The \code{equity} data frame contains holding data for a trading strategy dealing with equities. 
 
 
-<<echo = FALSE>>=
-library(backtestGraphics)
-library(dplyr)
-
-## use the following dplyr code to show a more interesting section of
-## the data frame
-
-df <- equity %>% filter(name %in% unique(equity$name)[1:3],
-                  date %in% as.Date(c("2005-05-02", "2005-05-03",
-                                      "2005-05-04"))) %>%
-      arrange(date, name)
-
-print.data.frame(df, row.names = FALSE)
-@
+\begin{Schunk}
+\begin{Soutput}
+ name       date sector       nmv        pnl
+  A.Z 2005-05-02    MAT -131926.1  3158.4525
+ ABFS 2005-05-02    IND -131926.1 -4058.6214
+ ABS. 2005-05-02    CNS -131926.1  -733.2929
+  A.Z 2005-05-03    MAT -128767.7  3644.3684
+ ABFS 2005-05-03    IND -135984.7  -335.9721
+ ABS. 2005-05-03    CNS -132659.4   733.2935
+  A.Z 2005-05-04    MAT -125123.3 -1457.7478
+ ABFS 2005-05-04    IND -136320.7 -1595.8684
+ ABS. 2005-05-04    CNS -131926.1 -2466.5317
+\end{Soutput}
+\end{Schunk}
 
 \begin{itemize}
 \item{\code{name:} column contains the each stock's symbol.}
@@ -153,17 +148,22 @@ print.data.frame(df, row.names = FALSE)
 \noindent
 Now, let us look at \code{commodity}. Simply put, a commodity futures contract is a legally binding agreement that provides for the delivery of the specified value of the said commodity at a specific time period in the future [\cite{futures}]. The \code{commodity} data frame consists of holding data from a trading strategy dealing in such commodity futures. 
 
-<<echo = FALSE>>=
-
-## use the following dplyr code to show a more interesting section of
-## the data frame
-
-df <- (commodity %>% filter(id   %in% c("CO", "FC", "W"),
-                      date %in% as.Date(c("2003-02-03", "2003-02-07"))) %>%
-       arrange(id, name))[c(1,6,15,16,17),]
-print.data.frame(df, row.names = FALSE)
-
-@
+\begin{Schunk}
+\begin{Soutput}
+          name id       date      sector portfolio   strategy
+         brent CO 2003-02-03      energy         1 Strategy 1
+         brent CO 2003-02-03      energy         6 Strategy 1
+ cattle feeder FC 2003-02-03   livestock         1 Strategy 3
+     cbt wheat  W 2003-02-03 agriculture         1 Strategy 3
+     cbt wheat  W 2003-02-07 agriculture         1 Strategy 3
+  substrategy      gmv    nmv      pnl contract
+ Strategy 1.1   921600 921600 -21600.0       30
+ Strategy 1.2   445440 445440 -10441.5       14
+ Strategy 3.1 10426000 -58500  -7280.0      260
+ Strategy 3.2  3616300  14500   5800.0      232
+ Strategy 3.2  3738100  23200  23200.0      232
+\end{Soutput}
+\end{Schunk}
 
 The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} have the same meaning as the ones in \code{equity}. The remaining columns are listed below: (Note: these columns are optional). 
 
@@ -184,14 +184,32 @@ The columns \code{name}, \code{date}, \code{sector}, \code{nmv}, and \code{pnl} 
 
 Finally, we look at \code{credit}. Credit Default Swaps (CDS) are a type of credit derivative that transfers the credit risk from one group of investors to another, in exchange for payment [\cite{CDS}]. The \code{credit} data frame contains holding data from a trading strategy dealing in such CDS. 
 
-<<echo = FALSE>>=
-df <- credit %>% filter(name %in% unique(credit$name)[1:3],
-                  date %in% unique(credit$date)[1:3]) %>%
-      arrange(date, name)
-
-print.data.frame(df, row.names = FALSE)
-
-@
+\begin{Schunk}
+\begin{Soutput}
+         name       date          sector  strategy   gmv      nmv
+  AA.Senior.5 2008-10-01 Basic Materials     daily 9e+06 259259.3
+  AA.Senior.5 2008-10-01 Basic Materials   monthly 9e+06 259259.3
+  AA.Senior.5 2008-10-01 Basic Materials quarterly 9e+06 259259.3
+ ABY.Senior.5 2008-10-01 Basic Materials     daily 9e+06 259259.3
+ ABY.Senior.5 2008-10-01 Basic Materials   monthly 9e+06 259259.3
+ ABY.Senior.5 2008-10-01 Basic Materials quarterly 9e+06 259259.3
+  AA.Senior.5 2008-10-02 Basic Materials     daily 9e+06 170731.7
+ ABY.Senior.5 2008-10-02 Basic Materials     daily 9e+06 170731.7
+  AA.Senior.5 2008-10-03 Basic Materials     daily 9e+06 170731.7
+ ABY.Senior.5 2008-10-03 Basic Materials     daily 9e+06 170731.7
+          pnl
+     570.9305
+       0.0000
+  -55605.8350
+  -65521.3738
+ 1343776.6544
+  356766.3732
+   39295.1220
+ -149936.6291
+   75865.3799
+  349670.0335
+\end{Soutput}
+\end{Schunk}
 
 \noindent
 Most of the columns here are the same as those in e\code{equity} and \code{commodity}. Notice that the \code{strategy} column here is used to denote backtest results for different trading frequencies. Towards this, the user must provide all backtest observations for each instrument, even when the position on the instrument is held and unchanged. This is because \pkg{backtestGraphics} uses the time gaps between each observation to determine the trading frequencies, and to calculate the annualized statistics. 
@@ -206,10 +224,12 @@ In this section, we discuss the functionality of various components of the \pkg{
 \noindent
 As an example, let us look at the interface for the \code{commodity} data frame. Type the following command, and click the ``Visualize" button on the Shiny interface returned by the function call.
 
-<<eval = FALSE>>=
-library(backtestGraphics)
-backtestGraphics(x = commodity)
-@
+\begin{Schunk}
+\begin{Sinput}
+R> library(backtestGraphics)
+R> backtestGraphics(x = commodity)
+\end{Sinput}
+\end{Schunk}
 
 
 \begin{figure}[H]

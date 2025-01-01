@@ -2,6 +2,12 @@
 ---
 - title: "Backtest Graphics"   
 - authors: 
+  - name: Yanrong Song
+    email: yrsong129@gmail.com
+    affiliation: Columbia University
+  - name: Zijie Zhu
+    email: zijie.miller.zhu@gmail.com
+    affiliation: Columbia University
   - name: David Kane
     email: david.kane@gmail.com
     affiliation: Harvard University
@@ -14,10 +20,8 @@
   - name: Fan Zhang
     email: fan.zhang@williams.edu
     affiliation: Williams College
-  - name: Miller Zijie Zhu
-    email: zijie.miller.zhu@gmail.com
-    affiliation: Williams College    
-- date: 30th May 2016
+    
+- date: 31st December 2024
 - bibliography: paper.bib    
 
 ---

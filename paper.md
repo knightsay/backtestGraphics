@@ -33,7 +33,7 @@ affiliations:
  - name: Williams College, United States
    index: 3
     
-date: 31st December 2024
+date: 31 December 2024
 bibliography: paper.bib    
 
 ---

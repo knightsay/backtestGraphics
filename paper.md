@@ -1,34 +1,46 @@
 
 ---
-- title: "Backtest Graphics"   
-- authors: 
+title: "Backtest Graphics"   
+tags: 
+  - R
+  - backtesting
+  - vizualization
+authors: 
   - name: Yanrong Song
+    orcid: 0009-0003-5738-8384
     email: yrsong129@gmail.com
-    affiliation: Columbia University
+    affiliation: 1
   - name: Zijie Zhu
     email: zijie.miller.zhu@gmail.com
-    affiliation: Columbia University
+    affiliation: 1
   - name: David Kane
     email: david.kane@gmail.com
-    affiliation: Harvard University
+    affiliation: 2
   - name: Ziqi Lu
     email: ziqi.lu@williams.edu
-    affiliation: Williams College
+    affiliation: 3
   - name: Karan Tibrewal
     email: karan.tibrewal@williams.edu
-    affiliation: Williams College
+    affiliation: 3
   - name: Fan Zhang
     email: fan.zhang@williams.edu
-    affiliation: Williams College
+    affiliation: 3
+affiliations:
+ - name: Columbia University, United States
+   index: 1
+ - name: Harvard University, United States
+   index: 2
+ - name: Williams College, United States
+   index: 3
     
-- date: 31st December 2024
-- bibliography: paper.bib    
+date: 31st December 2024
+bibliography: paper.bib    
 
 ---
 
-![](bg1.png)
 
-###Summary
+
+# Summary
 
 Backtesting is the process of testing trading strategies on prior time horizons to measure the effectiveness of a given strategy. It helps investors understand and optimize their trading strategies. The **Backtest Graphics** package provides an interactive **Shiny** interface to visualize backtest results for a variety of financial instruments (equities, futures, and credit default swaps, among others)  (Chang et al. 2015). These visualizations enable users to employ their human perception to process a lot of backtest data quickly and approximately (Bostock 2012). 
 
@@ -46,8 +58,13 @@ Additionally, to accommodate for more complex backtests, **Backtest Graphics** a
 
 In order to see **Backtest Graphics** in action, please visit [here](https://backtestgraphics.shinyapps.io/backtestGraphics)!
 
+# Statement of need
 
-###References
+The \pkg{backtestGraphics} package provides an interactive graphical interface to visualize backtests results for a variety of financial instruments (equities, futures, credit default swaps, et cetera).
+The \pkg{Shiny} interface, returned by the package, contains a sidebar panel with summary and detailed performance statistics, such as number of instruments, cumulative and annualized profit and loss, Sharpe ratio, top three drawdowns, and the three best and worst performers in the backtest. 
+The main panel of interface houses interactive plots of profit and loss (P\&L), net market value (NMV) and gross market value (GMV). Lastly, the package also supports vizualization of multiple strategies, sub-strategies, and overlapping portfolios that may be present in a single backtest result. 
+
+# Citations
 
 Bostock, Mike. 2012. Time Series Visualization with Cubism.js. https://bost.ocks.org/mike/cubism/intro/#0.     
 Campbell, Kyle, Jeffrey Enos, Daniel Gerlanc, and David Kane. 2008. “Backtests.” R News 7 (1).    

@@ -12,7 +12,7 @@ Description: Creates an interactive graphics
              plots of profit and loss (P&L), net market value (NMV) and 
              gross market value (GMV) are displayed in the right panel. 
 Version: 0.1.8
-Date: 2024-12-31
+Date: 2025-01-02
 Authors@R: c(
     person(given = "Yanrong", 
            family = "Song", 
@@ -29,7 +29,7 @@ Authors@R: c(
     person(given = "Ziqi", 
            family = "Lu", 
            role = "aut", 
-           email = "ziqi.lu@williams.edu"),
+           email = "ziqilu@g.harvard.edu"),
     person(given = "Karan", 
            family = "Tibrewal", 
            role = "aut", 

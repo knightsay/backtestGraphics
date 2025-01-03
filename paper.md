@@ -19,8 +19,8 @@ authors:
   email: david.kane@gmail.com
   affiliation: 2
 - name: Ziqi Lu
-  email: ziqi.lu@williams.edu
-  affiliation: 3
+  email: ziqilu@g.harvard.edu
+  affiliation: 2
 - name: Karan Tibrewal
   email: karan.tibrewal@williams.edu
   affiliation: 3

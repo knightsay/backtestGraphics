@@ -7,3 +7,5 @@
 *.Rproj
 /doc/
 /Meta/
+vignettes/backtestGraphics.log
+vignettes/backtestGraphics.tex

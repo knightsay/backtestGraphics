@@ -4,7 +4,7 @@ title: "Backtest Graphics"
 tags:
 - R
 - backtesting
-- vizualization
+- visualization
 date: "31 December 2024"
 output: pdf_document
 authors:

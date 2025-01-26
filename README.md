@@ -1,17 +1,17 @@
-![](bg1.png)
-
 Authors
 --------------------------------------------------------
 
+Yanrong Song, yrsong129 at gmail.com
+
+Zijie Zhu, zijie.miller.zhu at gmail.com
+
 David Kane, dave.kane at gmail.com
 
-Ziqi Lu, ziqi.lu at williams.edu
+Ziqi Lu, ziqilu at g.harvard.edu
 
 Karan Tibrewal, karan.tibrewal at williams.edu
 
 Fan Zhang, fan.zhang at williams.edu
-
-Miller Zijie Zhu, zijie.zhu at williams.edu
 
 About
 -----------------------------------------------------------------------
@@ -28,7 +28,7 @@ You can easily install `backtestGraphics` by typing:
 or
 
     library(devtools)
-    install_github("knightsay/backtestGraphics")
+    install_github("yanrong-stacy-song/backtestGraphics")
 
 Usage
 ----------------------------------------------------------------------------------------------------
@@ -39,9 +39,17 @@ As an example, let us look at `backtestGraphics` at work for the `commodity` dat
 
     library(backtestGraphics)
     backtestGraphics(x = commodity)
+    
+For more details, please run the following to see the detailed vignette:
+
+    vignette("backtestGraphics")
+    
+Contributing
+----------------------------------------------------------------------------------------------------
+We welcome contributions! Please see our contributing guidelines in the [Github Wiki](https://github.com/yanrong-stacy-song/backtestGraphics/wiki/Contributing-Guide) for more details on how to report issues, request features, or submit a pull request.
 
 
 Maintainer
 ----------------------------------------------------------------------------------------------------
-Miller Zijie Zhu, zijie.zhu at williams.edu
+Yanrong Song, yrsong129 at gmail.com
 

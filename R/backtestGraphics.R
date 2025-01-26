@@ -104,9 +104,7 @@
 #'   and performances are displayed on the left sidebar as tables.
 #'   
 #' @examples
-#' \dontrun{
-#' backtestGraphics(data = credit.bt)
-#' }
+#' if(interactive()) {backtestGraphics(credit)}
 #' 
 #' @importFrom xts xts
 #' @importFrom scales comma_format
@@ -351,23 +349,26 @@ backtestGraphics <- function(x,
         
         datavalues <- c(as.character(stat.value$day1),
                         as.character(stat.value$day2),
-                        comma_format(digits = 4)(capital.num),
-                        comma_format(digits = 4)(stat.value$gmv.mean),
-                        x.intermediate$instrument,
-                        comma_format(digits = 4)(stat.value$pnl$pnl.cum),
-                        comma_format(digits = 4)(stat.value$pnl$pnl.annualized),
-                        comma_format(digits = 4)(stat.value$pnl$pnl.vol), 
-                        comma_format(digits = 3)(stat.value$annualizedret),
-                        comma_format(digits = 3)(stat.value$volret),
-                        comma_format(digits = 3)(stat.value$pnl$pnl.sharpe),
+                        if (is.null(capital.num)) {
+                          'NULL'
+                        } else {
+                          comma_format(accuracy = 0.0001)(capital.num)
+                        },
+                        comma_format(accuracy = 0.0001)(stat.value$gmv.mean),
+                        as.character(x.intermediate$instrument),
+                        comma_format(accuracy = 0.0001)(stat.value$pnl$pnl.cum),
+                        comma_format(accuracy = 0.0001)(stat.value$pnl$pnl.annualized),
+                        comma_format(accuracy = 0.0001)(stat.value$pnl$pnl.vol), 
+                        comma_format(accuracy = 0.001)(stat.value$annualizedret),
+                        comma_format(accuracy = 0.001)(stat.value$volret),
+                        comma_format(accuracy = 0.001)(stat.value$pnl$pnl.sharpe),
                         paste(as.character(stat.value$performance$best.month),
-                              " (", comma_format(digits = 4)(stat.value$performance$best.pnl),")",
+                              " (", comma_format(accuracy = 0.0001)(stat.value$performance$best.pnl),")",
                               sep = ""),
                         paste(as.character(stat.value$performance$worst.month),
-                              " (",comma_format(digits = 4)(stat.value$performance$worst.pnl),")",
+                              " (",comma_format(accuracy = 0.0001)(stat.value$performance$worst.pnl),")",
                               sep = "")
         )
-        
         tab <- as.data.frame(cbind(items, datavalues))
         
         return(tab)
@@ -397,7 +398,7 @@ backtestGraphics <- function(x,
                        
                        tbl$pnl <- as.character(tbl$pnl)
                        for(i in 2:nrow(tbl)){
-                         tbl$pnl[i] <- comma_format(digit = 4)(as.numeric(tbl$pnl[i]))
+                         tbl$pnl[i] <- comma_format(accuracy = 0.0001)(as.numeric(tbl$pnl[i]))
                        }
                        
                        return(tbl)
@@ -422,7 +423,7 @@ backtestGraphics <- function(x,
                        
                        tbl$pnl <- as.character(tbl$pnl)
                        for(i in 2:nrow(tbl)){
-                         tbl$pnl[i] <- comma_format(digit = 4)(as.numeric(tbl$pnl[i]))
+                         tbl$pnl[i] <- comma_format(accuracy = 0.0001)(as.numeric(tbl$pnl[i]))
                        }
                        
                        return(tbl)
@@ -443,7 +444,7 @@ backtestGraphics <- function(x,
                        
                        tbl$pnl <- as.character(tbl$pnl)
                        for(i in 2:nrow(tbl)){
-                         tbl$pnl[i] <- comma_format(digit = 4)(as.numeric(tbl$pnl[i]))
+                         tbl$pnl[i] <- comma_format(accuracy = 0.0001)(as.numeric(tbl$pnl[i]))
                        }
                        
                        colnames(tbl) <- c("Start Date","End Date", "P&L ($)")

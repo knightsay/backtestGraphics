@@ -20,7 +20,7 @@ create_instrument_optGroups <- function(sector, id) {
   
   for(this_sector in unique(sector))
   {
-    sector_data <- dplyr::filter(commodity, sector == this_sector)
+    sector_data <- dplyr::filter(backtestGraphics::commodity, sector == this_sector)
     options <- c(this_sector, unique(sector_data$id))
     optGroupList[[this_sector]] <- options
   }
